@@ -1,5 +1,3 @@
-READ ME for: Superpixels
-
 EXML WS23/24 Uni Bonn - Explainable Machine Learinig Seminar: Planet-V2
 by Titus Henkelmann, Jakob Weigand and Adrian Weng in February 2024 
 
