@@ -20,7 +20,7 @@ All code is done with Python. Do not change folder structure or delete files!
 	   16-18 can be the inital ones. Results are automatically saved!
 	* Run the Planet with the images generated in 1.b. 
 	
-		*****TITUS HIER EINFUEGEN*****
+		*****TITUS SCHRITTE FÜR SUPERPIXELS HIER EINFUEGEN*****
 		
 	* The results of 1.c are needed to run "Visualize_Planet_Output.py". Parameters can be
 	   set in line 12 and 13 for the current image name(l. 13) and the associated result (l.12)
