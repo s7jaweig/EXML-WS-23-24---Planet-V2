@@ -14,7 +14,9 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 Konzept erklären
 
 # Superpixel
-The idea behind superpixels is similar to the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/edit/main/README.md#sliding-blackbox). The aim is to find regions that have a particularly strong influence on the final result. To do this, the image is first divided into superpixels. Superpixels are similar regions within an image, e.g. sky, buildings or vegetation. A single image is divided into around 15 superpixels, the exact number depends on the context shown. 
+The idea behind superpixels is similar to that of the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/edit/main/README.md#sliding-blackbox). The image is first divided into superpixels. Superpixels are similar regions within an image, such as the sky, buildings or vegetation. A single image is divided into around 15 superpixels, the exact number depending on the context being displayed. The aim is to be able to make a statement about which region has a particularly strong influence on the final result.
+The Planet is applied to the original image. The result is the geocell for which the output is maximum. The network is then applied to each superpixel. Only the geocell with the corresponding score for which the original image produced the maximum output is of interest as the output. The scores are scored to be compared. This makes it possible to determine which area of the image had a particularly large influence on the result of the original image. For a better understanding of the results, the score values of the superpixels are scaled to the range 0 to 255 and displayed in colour in the image. 
+
 # Data
 Worauf haben wir getestet vorstellen
 
