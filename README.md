@@ -8,14 +8,13 @@ Beschreibung des Projektes goes here
 
 # Requirements
 
-We used the given model from [Kaggle]([https://github.com/tensorflow/tcav/tree/master/tcav/tcav_examples/image_models/imagenet](https://www.kaggle.com/models/google/planet-v2)), which is free avaliable.
+We used the given model from [Kaggle](https://www.kaggle.com/models/google/planet-v2), which is free avaliable.
 
 # Sliding BlackBox
 Konzept erklären
 
 # Superpixel
-Konzept erklären
-
+The idea behind superpixels is similar to the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/edit/main/README.md#sliding-blackbox). The aim is to find regions that have a particularly strong influence on the final result. To do this, the image is first divided into superpixels. Superpixels are similar regions within an image, e.g. sky, buildings or vegetation. A single image is divided into around 15 superpixels, the exact number depends on the context shown. 
 # Data
 Worauf haben wir getestet vorstellen
 
