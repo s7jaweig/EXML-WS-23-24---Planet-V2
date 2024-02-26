@@ -4,7 +4,7 @@ by Titus Henkelmann, Jakob Weigand and Adrian Weng in February 2024
 -------------------------------------------------------------------------------------------------
 
 The following is a list of all steps, including the associated code, that must be followed to run
-the framework. 
+the framework "Superpixels". 
 All code is done with Python. Do not change folder structure or delete files!
 
 -------------------------------------------------------------------------------------------------
