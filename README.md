@@ -5,6 +5,9 @@ by Titus Henkelmann, Jakob Weigand and Adrian Weng in February 2024
 
 Beschreibung des Projektes goes here
 
+# Workflow
+![chart drawio](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/assets/131247050/b0e1aa5c-247d-44a6-84dc-a50884da603d)
+
 
 # Requirements
 
