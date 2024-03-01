@@ -11,6 +11,9 @@ Beschreibung des Projektes goes here
 We used the given model from [Kaggle](https://www.kaggle.com/models/google/planet-v2), which is free avaliable.
 
 # Workflow (Adi)
+First a raw image is defined which is to be processed in the workflow. The next step is to prepare the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images of the data sets of the superpixel, the sliding black box and the raw images are sent through the neural network. The output for each individual image is the probability of how many percent of the image in the top 5 tiles has been solved. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
+
+
 <p>
   <img src="./readme/workflow.png" width="700" />
 </p>
