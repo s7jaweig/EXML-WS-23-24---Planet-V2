@@ -39,7 +39,13 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 * Beide Löwen
 
 # Ergebnisse (Adi, Jakob)
-
+<p float="left">
+  <img src="./readme/B_Muenster_combined.png" width="300" />
+  <img src="./readme/Overlapped_B_Muenster.jpg" width="300" /> 
+</p>
+<p float="left">
+  <em>Fig. 1: Solutions for Bonner Münster</em>
+</p>
 
 # Zusammenfassung  (Titus)
 
