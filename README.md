@@ -64,7 +64,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
   <em>Fig. 1: Geoplots for Big Ben</em>
 </p>
 <p>
-  <img src="./readme/B_Muenster_combined.png" width="350" />
+  <img src="./readme/Ergebnis-london.jpg" width="350" />
   <img src="./readme/Overlapped_london.jpg" width="350" /> 
 </p>
 <p>
@@ -72,14 +72,14 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 </p>
 
 % Matterhorn
-<p>
-  <img src="./readme/Matterhorn_combined.png" width="700" />
+<p>Ergebnis-Matterhorn.jpg
+  <img src="./readme/Ergebnis-Matterhorn.jpg" width="700" />
 </p>
 <p>
   <em>Fig. 1: Geoplots for Matterhorn</em>
 </p>
 <p>
-  <img src="./readme/Ergebnis-Matterhorn.jpg" width="350" />
+  <img src="./readme/Matterhorn_combined.png" width="350" />
   <img src="./readme/Overlapped_Matterhorn.png" width="350" /> 
 </p>
 <p>
