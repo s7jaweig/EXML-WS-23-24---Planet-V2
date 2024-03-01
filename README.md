@@ -40,8 +40,14 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 
 # Ergebnisse (Adi, Jakob)
 <p>
-  <img src="./readme/B_Muenster_combined.png" width="300" />
-  <img src="./readme/Overlapped_B_Muenster.jpg" width="300" /> 
+  <img src="./readme/Ergebnis-B_Muenster.jpg" width="700" />
+</p>
+<p>
+  <em>Fig. 1: Geoplots for Bonner Münster</em>
+</p>
+<p>
+  <img src="./readme/B_Muenster_combined.png" width="330" />
+  <img src="./readme/Overlapped_B_Muenster.jpg" width="330" /> 
 </p>
 <p>
   <em>Fig. 1: Solutions for Bonner Münster</em>
