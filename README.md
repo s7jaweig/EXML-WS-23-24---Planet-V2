@@ -41,6 +41,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 * Beide Löwen
 
 # Ergebnisse (Adi, Jakob)
+% Münster
 <p>
   <img src="./readme/Ergebnis-B_Muenster.jpg" width="700" />
 </p>
@@ -50,6 +51,36 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 <p>
   <img src="./readme/B_Muenster_combined.png" width="350" />
   <img src="./readme/Overlapped_B_Muenster.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig. 1: Solutions for Bonner Münster</em>
+</p>
+
+% London
+<p>
+  <img src="./readme/london_combined.png" width="700" />
+</p>
+<p>
+  <em>Fig. 1: Geoplots for Big Ben</em>
+</p>
+<p>
+  <img src="./readme/B_Muenster_combined.png" width="350" />
+  <img src="./readme/Overlapped_london.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig. 1: Solutions for Bonner Münster</em>
+</p>
+
+% Matterhorn
+<p>
+  <img src="./readme/Matterhorn_combined.png" width="700" />
+</p>
+<p>
+  <em>Fig. 1: Geoplots for Matterhorn</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-Matterhorn.jpg" width="350" />
+  <img src="./readme/Overlapped_Matterhorn.png" width="350" /> 
 </p>
 <p>
   <em>Fig. 1: Solutions for Bonner Münster</em>
