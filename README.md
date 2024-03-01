@@ -11,10 +11,9 @@ Beschreibung des Projektes goes here
 We used the given model from [Kaggle](https://www.kaggle.com/models/google/planet-v2), which is free avaliable.
 
 # Workflow (Adi)
-![chart drawio](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/assets/131247050/b0e1aa5c-247d-44a6-84dc-a50884da603d)
-
-
-
+<p>
+  <img src="./readme/workflow.png" width="700" />
+</p>
 ## Sliding BlackBox
 Konzept erklären
 
