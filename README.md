@@ -41,7 +41,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 * Beide Löwen
 
 # Ergebnisse (Adi, Jakob)
-% Münster
+
 <p>
   <img src="./readme/Ergebnis-B_Muenster.jpg" width="700" />
 </p>
@@ -56,23 +56,23 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
   <em>Fig. 1: Solutions for Bonner Münster</em>
 </p>
 
-% London
+
 <p>
-  <img src="./readme/london_combined.png" width="700" />
+  <img src="./readme/Ergebnis-london.jpg" width="700" />
 </p>
 <p>
   <em>Fig. 1: Geoplots for Big Ben</em>
 </p>
 <p>
-  <img src="./readme/Ergebnis-london.jpg" width="350" />
+  <img src="./readme/london_combined.png" width="350" />
   <img src="./readme/Overlapped_london.jpg" width="350" /> 
 </p>
 <p>
   <em>Fig. 1: Solutions for Bonner Münster</em>
 </p>
 
-% Matterhorn
-<p>Ergebnis-Matterhorn.jpg
+
+<p>
   <img src="./readme/Ergebnis-Matterhorn.jpg" width="700" />
 </p>
 <p>
@@ -84,6 +84,37 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 </p>
 <p>
   <em>Fig. 1: Solutions for Bonner Münster</em>
+</p>
+
+
+<p>
+  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="700" />
+</p>
+<p>
+  <img src="./readme/Loewe_Zoo_combined.png" width="350" />
+  <img src="./readme/Overlapped_Loewe_Zoo.png" width="350" /> 
+</p>
+<p>
+  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="700" />
+</p>
+<p>
+  <img src="./readme/Loewe_Krueger_combined.png" width="350" />
+  <img src="./readme/Overlapped_Loewe_Krueger.png" width="350" /> 
+</p>
+
+<p>
+  <img src="./readme/Ergebnis-See_Sommer.jpg" width="700" />
+</p>
+<p>
+  <img src="./readme/See_Sommer_combined.png" width="350" />
+  <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
+</p>
+<p>
+  <img src="./readme/Ergebnis-See_Winter.jpg" width="700" />
+</p>
+<p>
+  <img src="./readme/See_Winter_combined.png" width="350" />
+  <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
 </p>
 
 # Zusammenfassung  (Titus)
