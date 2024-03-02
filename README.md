@@ -106,7 +106,9 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
   <img src="./readme/See_Sommer_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
 </p>
+
 In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with superpixels and the sliding black box, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here.
+
 <p>
   <img src="./readme/Ergebnis-See_Winter.jpg" width="700" />
 </p>
@@ -114,6 +116,7 @@ In a further test, two images taken at the same location were analyzed. The diff
   <img src="./readme/See_Winter_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
 </p>
+In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood.
 
 # Zusammenfassung  (Titus)
 
