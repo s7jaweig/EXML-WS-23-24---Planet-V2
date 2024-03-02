@@ -53,6 +53,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
   <em>Fig. 1: Solutions for Bonner Münster</em>
 </p>
 
+The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonn Minster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.
 
 <p>
   <img src="./readme/Ergebnis-london.jpg" width="700" />
