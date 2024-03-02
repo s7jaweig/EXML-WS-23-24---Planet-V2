@@ -83,6 +83,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
   <em>Fig. 1: Solutions for Bonner Münster</em>
 </p>
 
+The analysis of the results for the image of the Matterhorn was very impressive. The Planet-V2 predicted the geocell in Switzerland where the image was actually taken with a high confidence of 85%. All other geocells are also located nearby and in Switzerland. What is surprising, however, is which image areas contributed the most to this decision with the help of our analysis. We humans would immediately recognize an image of this mountain by its characteristic peak. However, the superpixel and sliding black box approaches have also detected image information at the foot of the mountain as relevant.
 
 <p>
   <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="700" />
