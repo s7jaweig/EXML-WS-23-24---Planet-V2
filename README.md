@@ -15,10 +15,12 @@ The convolutional neural network PlaNet can goelocalise images. For this purpose
 
 The network is based on the Interception V3 architecture for  image classification according to Christian Szegedy et al. and was presented in the paper ["Rethinking the inception architecture for computer vision"](https://arxiv.org/abs/1512.00567). The division of the earth for the assignment of probabilities is based on the ["S2 geometry"](http://s2geometry.io/) of Google.
 
-<figure id="GrafPaper">
-  <img src="./readme/ErgebnissePaper.png" alt="Bild 1">
-  <figcaption>Fig 1: Accurency of PlaNet</figcaption>
-</figure>
+<p>
+  <img src="./readme/ErgebnissePaper.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 1: Accurency of PlaNet</em>
+</p>
 
 The network is trained with the help of 9.1 million georeferenced images from the Internet. In the paper by Tobias Weyand et al. the network is analysed for accuracy using a photo dataset from Flickr. The results are shown in Figure 1. The country accuracy is 28.4% and the continent accuracy is 48% for the top-1 prediction.
 
@@ -30,11 +32,12 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 
 First a raw image is defined which is to be processed in the workflow. The next step is to prepare the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images of the data sets of the superpixel, the sliding black box and the raw images are sent through the neural network. The output for each individual image is the probability of how many percent of the image in the top 5 tiles has been solved. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
 
-
-<figure>
-  <img src="./readme/workflow.png" alt="Bild 2">
-  <figcaption>Fig 2: Workflow</figcaption>
-</figure>
+<p>
+  <img src="./readme/workflow.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 2: Workflow</em>
+</p>
 
 ### Sliding BlackBox
 
@@ -59,95 +62,108 @@ In order to test the algotithms presented, some images from Google Images were s
 
 An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_none/12784/Londen.webp) of Big Ben in London is used to start with. This is assigned by PlaNet to cell 5219 with 28% probability and corresponds to the location where the image was taken.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/london.png" alt="Bild 3" float="left" width="70%">
-        <figcaption>Fig 3: Big Ben in London</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-london.jpg" alt="Bild 4" float="right" width="">
-  <figcaption>Fig 4: Geoplots Big Ben</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/london.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 3: Big Ben in London</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-london.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 4: Geoplots Big Ben</em>
+</p>
 
 Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Minster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/B_Muenster.jpg" alt="Bild 5" float="left" width="70%">
-        <figcaption>Fig 5: Bonner Muenster in Bonn</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-B_Muenster.jpg" alt="Bild 6" float="right" width="">
-  <figcaption>Fig 6: Geoplots Bonner Muenster</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/B_Muenster.jpg width="350" /> 
+</p>
+<p>
+  <em>Fig 5: Bonner Muenster in Bonn</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-B_Muenster.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 6: Geoplots Bonner Muenster</em>
+</p>
 
 The [Matterhorn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG/800px-3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG) is assigned to the correct cell 3687 with a probability of over 85%. This is intended to investigate the decision behaviour of mountains.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/Matterhorn.png" alt="Bild 7" float="left" width="70%">
-        <figcaption>Fig 7: Matterhon in Switzerland</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-Matterhorn.jpg" alt="Bild 8" float="right" width="">
-  <figcaption>Fig 8: Geoplots Matterhorn</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/Matterhorn.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 7: Matterhon in Switzerland</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-Matterhorn.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 8: Geoplots Matterhorn</em>
+</p>
 
 To analyse the network in landscapes in summer and winter, two images (private) were used that were taken at exactly the same location at different times of the year.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/See_Sommer.jpg" alt="Bild 9" float="left" width="90%">
-        <figcaption>Fig 9: Mummelsee, Schwarzwald, in the summer</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/See_Winter.jpg" alt="Bild 10" float="right" width="90%">
-  <figcaption>Fig 10:  Mummelsee, Schwarzwald, in the winter</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/See_Sommer.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 9: Mummelsee, Schwarzwald, in the summer</em>
+</p>
+<p>
+  <img src="./readme/See_Winter.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 10:  Mummelsee, Schwarzwald, in the winter</em>
+</p>
 
 The network assigned the summer picture to different regions of the world. However, all locations were assigned to the correct latitude. In winter, the image was assigned to the Alps in the top 5 predictions, which is close to where the picture was taken.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-See_Sommer.jpg" alt="Bild 11" float="left" width="90%">
-        <figcaption>Fig 11: Geoplot summer picture</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-See_Winter.jpg" alt="Bild 12" float="right" width="90%">
-  <figcaption>Fig 12:  Geoplot winter picture</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/Ergebnis-See_Sommer.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 11: Geoplot summer picture</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-See_Winter.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 12:  Geoplot winter picture</em>
+</p>
 
 Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
-
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/Loewe_Krueger.png" alt="Bild 13" float="left" width="90%">
-        <figcaption>Fig 13: Lion in nature</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Loewe_Zoo.png" alt="Bild 14" float="right" width="90%">
-  <figcaption>Fig 14:  Lion in zoo</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/Loewe_Krueger.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 13: Lion in nature</em>
+</p>
+<p>
+  <img src="./readme/Loewe_Zoo.png" width="350" /> 
+</p>
+<p>
+  <em>Fig 14:  Lion in zoo</em>
+</p>
 
 The lions in the wild were correctly located in Kruger National Park, South Africa. The lions from the zoo in Gelsenkirchen were not placed exactly in Gelsenkirchen, but were only assigned to regions in which there are zoos.
 
-<div style="display: flex; align-items: flex-end;">
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-Loewe_Krueger.jpg" alt="Bild 15" float="left" width="90%">
-        <figcaption>Fig 15: Geoplot lion nature</figcaption>
-    </div>
-    <div style="flex: 1;">
-        <img src="./readme/Ergebnis-Loewe_Zoo.jpg" alt="Bild 16" float="right" width="90%">
-  <figcaption>Fig 16:  Geoplot lion zoo</figcaption>
-    </div>
-</div>
+<p>
+  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 15: Geoplot lion nature</em>
+</p>
+<p>
+  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig 16:  Geoplot lion zoo</em>
+</p>
 
 ## Ergebnisse
 
