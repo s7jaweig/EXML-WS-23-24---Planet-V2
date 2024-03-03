@@ -99,6 +99,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 
 --------------------------------------------------------------
 # Ergebnisse (Adi, Jakob)
+
 The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
 
 <p>
