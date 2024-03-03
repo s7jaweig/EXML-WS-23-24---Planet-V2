@@ -123,23 +123,23 @@ The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicte
 
 
 <p>
-  <img src="./readme/Matterhorn_combined.png" width="350" />
-  <img src="./readme/Overlapped_Matterhorn.png" width="350" /> 
+  <img src="./readme/Matterhorn_combined.png" height="300" />
+  <img src="./readme/Overlapped_Matterhorn.png" height="300" /> 
 </p>
 <p>
-  <em>Fig. X: Heatmaps for Bonner Münster</em>
+  <em>Fig. X: Heatmaps for Matterhorn</em>
 </p>
 
 The analysis of the results for the image of the Matterhorn was very impressive. The Planet-V2 predicted the geocell in Switzerland where the image was actually taken with a high confidence of 85%. All other geocells are also located nearby and in Switzerland. What is surprising, however, is which image areas contributed the most to this decision with the help of our analysis. We humans would immediately recognize an image of this mountain by its characteristic peak. However, the superpixel and sliding black box approaches have also detected image information at the foot of the mountain as relevant.
 
-
+<p>
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
   <img src="./readme/Overlapped_Loewe_Zoo.png" width="350" /> 
 </p>
   <em>Fig. X: Heatmaps for Lion in Zoo</em>
 
   
-
+<p>
   <img src="./readme/Loewe_Krueger_combined.png" width="350" />
   <img src="./readme/Overlapped_Loewe_Krueger.png" width="350" /> 
 </p>
