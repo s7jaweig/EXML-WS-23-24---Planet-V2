@@ -1,104 +1,155 @@
-EXML WS23/24 Uni Bonn - Explainable Machine Learinig Seminar: Planet-V2
-by Franziskus Henkelmann, Jakob Weigand and Adrian Weng in February 2024 
-
 # Concept discovery of Planet-V2 using Superpixel and Sliding BlackBox
 
-Beschreibung des Projektes goes here
+Bildnummern und Referenzen kontorllieren!!!!!!!
+Braucht ihr noch mehr Referenzen?
+Plots mit Figure darstellen? Bildunterschriften?
+Reichenfolge der Daten/Ergebnisse?
 
---------------------------------------------------------------
-# Requirements (Titus)
+PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
-We used the given model from [Kaggle](https://www.kaggle.com/models/google/planet-v2), which is free avaliable.
+This project was part of the Explainable Machine Learning seminar by Prof. Ribana Roscher, University of Bonn.
 
+## PlaNet
 
---------------------------------------------------------------
-# Workflow (Adi)
+The convolutional neural network PlaNet can goelocalise images. For this purpose, only the pixels of the image are used as input information and the network outputs a probability distribution over the entire earth for the potential location where the image was taken. The PlaNet network was developed together with Google and published by Tobias Weyand et al. in the paper ["Planet-photo geolocation with convolutional neural networks"](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_3).
+
+The network is based on the Interception V3 architecture for  image classification according to Christian Szegedy et al. and was presented in the paper ["Rethinking the inception architecture for computer vision"](https://arxiv.org/abs/1512.00567). The division of the earth for the assignment of probabilities is based on the ["S2 geometry"](http://s2geometry.io/) of Google.
+
+<figure id="GrafPaper">
+  <img src="./readme/ErgebnissePaper.png" alt="Bild 1">
+  <figcaption>Fig 1: Accurency of PlaNet</figcaption>
+</figure>
+
+The network is trained with the help of 9.1 million georeferenced images from the Internet. In the paper by Tobias Weyand et al. the network is analysed for accuracy using a photo dataset from Flickr. The results are shown in Figure 1. The country accuracy is 28.4% and the continent accuracy is 48% for the top-1 prediction.
+
+## Requirements
+
+We used the given model from [Kaggle](https://www.kaggle.com/models/google/planet-v2), which is free avaliable. As the network is implemented in Tensorflow, the libraries [Tensorflow](https://www.tensorflow.org/) and [Tensorflow Hub](https://www.tensorflow.org/hub) are required. These can be installed with the commands `pip install tensorflow` and `pip install tensorflow_hub`. The S2 geometries are also required. The implementation is only compatible with certain Python versions and the installations and requirements are described [here](https://github.com/google/s2geometry). In this case, the library could be installed with `pip install s2sphere` on Python 3.6.9. Finally, a label map is required to assign the S2 geometries to the network. This can be downloaded [here](https://www.gstatic.com/aihub/tfhub/labelmaps/planet_v2_labelmap.csv).
+
+## Workflow 
+
 First a raw image is defined which is to be processed in the workflow. The next step is to prepare the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images of the data sets of the superpixel, the sliding black box and the raw images are sent through the neural network. The output for each individual image is the probability of how many percent of the image in the top 5 tiles has been solved. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
 
 
-<p>
-  <img src="./readme/workflow.png" width="700" />
-</p>
+<figure>
+  <img src="./readme/workflow.png" alt="Bild 2">
+  <figcaption>Fig 2: Workflow</figcaption>
+</figure>
 
+### Sliding BlackBox
 
---------------------------------------------------------------
-## Sliding BlackBox
 The sliding black box approach follows the strategy of covering part of a raw image with a black box. To do this, a black box is slide over the raw image step by step in columns and rows. The black box is slid over the image both vertically and horizontally with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the Planet-V2. For the raw image, the geocell with the highest probability is detected. The scores for all images in the dataset predicted by the Planet-V2 in relation to the previously detected geocell are saved and provided for the creation of the heatmap. Each area of the heatmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
 
+### Superpixel
 
---------------------------------------------------------------
-## Superpixel
 The concept of superpixels is akin to that of the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/tree/main?tab=readme-ov-file#sliding-blackbox).  The image is initially partitioned into superpixels, which are regions of similarity within an image, such as the sky, buildings, or vegetation. Typically, an image is divided into approximately 15 superpixels, although the exact number depends on the context being depicted. The aim is to identify which region has a significant impact on the final outcome. The Planet is then applied to the original image. The geocell with the highest output is identified and applied to each superpixel. Only the geocell with the corresponding score that produced the maximum output for the original image is of interest. The scores are then compared to determine which area of the image had a significant impact on the original image's result. To enhance comprehension of the results, the score values of the superpixels are scaled to a range of 0 to 255 and displayed in colour within the image.
 
 
+### Network
+
+In order to be able to process the images created in the two approaches, the images must have a certain size and resolution. The images can then be fed into the network. The output is then analysed for the two approaches or the geoplots and output as a text file.
+
+### Geoplots
+
+To create the geoplots, the cell number, the probability for these and the coordinates of the top 5 predictions are loaded from the network into Matlab. The [geoplot module](https://de.mathworks.com/help/matlab/ref/geoplot.html) is then used to create and save an overview and a detailed plot for each prediction. These plots are used to analyse the result of the network and check that it is correct.
+
+## Data
+
+In order to test the algotithms presented, some images from Google Images were selected and analysed using the workflow (see Figure 2).
+
+An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_none/12784/Londen.webp) of Big Ben in London is used to start with. This is assigned by PlaNet to cell 5219 with 28% probability and corresponds to the location where the image was taken.
+
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/london.png" alt="Bild 3" float="left" width="70%">
+        <figcaption>Fig 3: Big Ben in London</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-london.jpg" alt="Bild 4" float="right" width="">
+  <figcaption>Fig 4: Geoplots Big Ben</figcaption>
+    </div>
+</div>
+
+Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Minster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
+
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/B_Muenster.jpg" alt="Bild 5" float="left" width="70%">
+        <figcaption>Fig 5: Bonner Muenster in Bonn</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-B_Muenster.jpg" alt="Bild 6" float="right" width="">
+  <figcaption>Fig 6: Geoplots Bonner Muenster</figcaption>
+    </div>
+</div>
+
+The [Matterhorn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG/800px-3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG) is assigned to the correct cell 3687 with a probability of over 85%. This is intended to investigate the decision behaviour of mountains.
+
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/Matterhorn.png" alt="Bild 7" float="left" width="70%">
+        <figcaption>Fig 7: Matterhon in Switzerland</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-Matterhorn.jpg" alt="Bild 8" float="right" width="">
+  <figcaption>Fig 8: Geoplots Matterhorn</figcaption>
+    </div>
+</div>
+
+To analyse the network in landscapes in summer and winter, two images (private) were used that were taken at exactly the same location at different times of the year.
+
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/See_Sommer.jpg" alt="Bild 9" float="left" width="90%">
+        <figcaption>Fig 9: Mummelsee, Schwarzwald, in the summer</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/See_Winter.jpg" alt="Bild 10" float="right" width="90%">
+  <figcaption>Fig 10:  Mummelsee, Schwarzwald, in the winter</figcaption>
+    </div>
+</div>
+
+The network assigned the summer picture to different regions of the world. However, all locations were assigned to the correct latitude. In winter, the image was assigned to the Alps in the top 5 predictions, which is close to where the picture was taken.
+
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-See_Sommer.jpg" alt="Bild 11" float="left" width="90%">
+        <figcaption>Fig 11: Geoplot summer picture</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-See_Winter.jpg" alt="Bild 12" float="right" width="90%">
+  <figcaption>Fig 12:  Geoplot winter picture</figcaption>
+    </div>
+</div>
+
+Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
 
---------------------------------------------------------------
-## Planet (Titus)
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/Loewe_Krueger.png" alt="Bild 13" float="left" width="90%">
+        <figcaption>Fig 13: Lion in nature</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Loewe_Zoo.png" alt="Bild 14" float="right" width="90%">
+  <figcaption>Fig 14:  Lion in zoo</figcaption>
+    </div>
+</div>
 
+The lions in the wild were correctly located in Kruger National Park, South Africa. The lions from the zoo in Gelsenkirchen were not placed exactly in Gelsenkirchen, but were only assigned to regions in which there are zoos.
 
+<div style="display: flex; align-items: flex-end;">
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-Loewe_Krueger.jpg" alt="Bild 15" float="left" width="90%">
+        <figcaption>Fig 15: Geoplot lion nature</figcaption>
+    </div>
+    <div style="flex: 1;">
+        <img src="./readme/Ergebnis-Loewe_Zoo.jpg" alt="Bild 16" float="right" width="90%">
+  <figcaption>Fig 16:  Geoplot lion zoo</figcaption>
+    </div>
+</div>
 
-
---------------------------------------------------------------
-## Geoplots (Titus)
-
-
-
---------------------------------------------------------------
-# Data (Titus)
-Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
-
-* Bonner Münster
-* Matterhorn
-* London
-* Sommer/Winter
-* Beide Löwen
-
-<p>
-  <img src="./readme/Ergebnis-B_Muenster.jpg" width="700" />
-</p>
-<p>
-  <em>Fig. X: Geoplots for Bonner Münster</em>
-</p>
-
-<p>
-  <img src="./readme/Ergebnis-london.jpg" width="700" />
-</p>
-<p>
-  <em>Fig. X: Geoplots for Big Ben</em>
-</p>
-
-<p>
-  <img src="./readme/Ergebnis-Matterhorn.jpg" width="700" />
-</p>
-<p>
-  <em>Fig. X: Geoplots for Matterhorn</em>
-</p>
-
-<p>
-  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="700" />
-</p>
-  <em>Fig. X: Geoplots for Lion in Zoo</em>
-
-
-<p>
-  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="700" />
-</p>
-  <em>Fig. X: Geoplots for Lion in Krueger National Park</em>
-
-<p>
-  <img src="./readme/Ergebnis-See_Sommer.jpg" width="700" />
-</p>
-  <em>Fig. X: Geoplots for Sea in Sommer season</em>
-  
-<p>
-  <img src="./readme/Ergebnis-See_Winter.jpg" width="700" />
-</p>
-  <em>Fig. X: Geoplots for Sea in Winter season</em>
-
-
---------------------------------------------------------------
-# Ergebnisse (Adi, Jakob)
+## Ergebnisse
 
 The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
 
@@ -164,16 +215,18 @@ In a further test, two images taken at the same location were analyzed. The diff
   
 In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
+## Zusammenfassung
 
---------------------------------------------------------------
-# Zusammenfassung  (Titus)
+In this project, the PlaNet network is analysed in more detail in order to understand which parts of the image are particularly important for the network's decision. To this end, two methods are used to mask parts of the image.
 
+With both algorithms it could be shown that the architecture of the surrounding buildings and the background of the images play a major role. In addition, reference is often made to several areas of the image. To summarise, it can be concluded that the analysis with both algorithms is successful, even if the algorithms make different statements in some cases.
 
+## Referenzen
 
+* [https://www.kaggle.com/models/google/planet-v2](https://www.kaggle.com/models/google/planet-v2)
+* [http://s2geometry.io/](http://s2geometry.io/)
+* Weyand, T., Kostrikov, I., & Philbin, J. (2016). Planet-photo geolocation with convolutional neural networks. In Computer Vision-ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part VIII 14 (pp. 37-55). Springer International Publishing.
+* Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2818-2826).
 
---------------------------------------------------------------
-# Referenzen (Alle)
-
-* https://www.kaggle.com/models/google/planet-v2
-* Weyand, T., Kostrikov, I., & Philbin, J. (2016). Planet-photo geolocation with convolutional neural networks. In Computer Vision–ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part VIII 14 (pp. 37-55). Springer International Publishing.
-  
+EXML WS23/24 Uni Bonn - Explainable Machine Learinig Seminar: Planet-V2
+by Franziskus Henkelmann, Jakob Weigand and Adrian Weng in February 2024
