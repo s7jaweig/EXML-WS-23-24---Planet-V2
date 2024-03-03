@@ -13,7 +13,7 @@ This project was part of the Explainable Machine Learning seminar by Prof. Riban
 
 The convolutional neural network PlaNet can goelocalise images. For this purpose, only the pixels of the image are used as input information and the network outputs a probability distribution over the entire earth for the potential location where the image was taken. The PlaNet network was developed together with Google and published by Tobias Weyand et al. in the paper ["Planet-photo geolocation with convolutional neural networks"](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_3).
 
-The network is based on the Interception V3 architecture for  image classification according to Christian Szegedy et al. and was presented in the paper ["Rethinking the inception architecture for computer vision"](https://arxiv.org/abs/1512.00567). The division of the earth for the assignment of probabilities is based on the ["S2 geometry"](http://s2geometry.io/) of Google.
+The network is based on the Interception V3 architecture for  image classification according to Christian Szegedy et al. and was presented in the paper ["Rethinking the inception architecture for computer vision"](https://arxiv.org/abs/1512.00567). The division of the earth for the assignment of probabilities is based on the [S2 geometry](http://s2geometry.io/) of Google.
 
 <p>
   <img src="./readme/ErgebnissePaper.png" width="350" /> 
