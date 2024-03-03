@@ -99,7 +99,7 @@ Worauf haben wir getestet vorstellen, mit Geoplots (Titus)
 
 --------------------------------------------------------------
 # Ergebnisse (Adi, Jakob)
-The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest.
+The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
 
 <p>
   <img src="./readme/B_Muenster_combined.png" width="350" />
@@ -109,7 +109,7 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
   <em>Fig. X: Heatmaps for Bonner Münster</em>
 </p>
 
-The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonn Minster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.
+The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.
 
 
 <p>
