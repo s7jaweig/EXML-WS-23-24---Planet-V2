@@ -123,8 +123,8 @@ The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicte
 
 
 <p>
-  <img src="./readme/Matterhorn_combined.png" height="300" />
-  <img src="./readme/Overlapped_Matterhorn.png" height="300" /> 
+  <img src="./readme/Matterhorn_combined.png" height="250" />
+  <img src="./readme/Overlapped_Matterhorn.png" height="250" /> 
 </p>
 <p>
   <em>Fig. X: Heatmaps for Matterhorn</em>
@@ -140,8 +140,8 @@ The analysis of the results for the image of the Matterhorn was very impressive.
 
   
 <p>
-  <img src="./readme/Loewe_Krueger_combined.png" width="350" />
-  <img src="./readme/Overlapped_Loewe_Krueger.png" width="350" /> 
+  <img src="./readme/Loewe_Krueger_combined.png" height="200" />
+  <img src="./readme/Overlapped_Loewe_Krueger.png" height="200" /> 
 </p>
   <em>Fig. X: Heatmaps for Lion in Krueger National Park</em>
 
