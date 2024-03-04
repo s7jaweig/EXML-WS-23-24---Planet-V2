@@ -3,6 +3,7 @@
 
 - Reichenfolge der Daten/Ergebnisse?
 - Superpixel ReadMe anpassen mit Titus Teil
+- Tiger vs Lion
 
 PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
