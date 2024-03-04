@@ -7,7 +7,7 @@ The code runs in JupyterLab. All required files and folder structures are includ
 ### Prerequisites
 - Python 3.6.9
 - JupyterLab
-- Required libraries: numpy, tensorflow, tensorflow_hub, matplotlib.image, skimage.transform, pandas, s2spere
+- Required libraries: numpy, tensorflow, tensorflow_hub, matplotlib.image, skimage.transform, pandas, s2sphere
 
 ### Usage
 1. Run the first two cells so load all libraries and functions
