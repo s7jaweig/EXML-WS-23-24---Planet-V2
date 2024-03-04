@@ -50,7 +50,7 @@ The concept of superpixels is akin to that of the [Sliding BlackBox](https://git
 
 ### Network
 
-In order to be able to process the images created in the two approaches, the images must have a certain size and resolution. The images can then be fed into the network. The output is then analysed for the two approaches or the geoplots and output as a text file.
+In order to be able to process the images created in the two approaches, the images must have a certain size and resolution. The images can then be fed into the network. The output is analysed for the two approaches or the geoplots and saved as a text file.
 
 ### Geoplots
 
@@ -78,7 +78,7 @@ An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_
 Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Minster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
 
 <p>
-  <img src="./readme/B_Muenster.jpg width="350" /> 
+  <img src="./readme/B_Muenster.jpg" width="350" /> 
 </p>
 <p>
   <em>Fig 5: Bonner Muenster in Bonn</em>
@@ -177,7 +177,7 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
   <em>Fig. X: Heatmaps for Bonner Münster</em>
 </p>
 
-The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.
+[//]: # (The first raw image chosen was a picture of Bonn Münster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.)
 
 
 <p>
