@@ -200,9 +200,9 @@ The network predicted the correct region for wild lions. Both approaches show th
 
 ## Conclusion
 
-In this project, the PlaNet network is analysed in more detail in order to understand which parts of the image are particularly important for the network's decision. To this end, two methods are used to mask parts of the image.
+This project analyses the PlaNet network in detail to determine the image components that are crucial for the network's decision. Two methods are employed to mask parts of the image.
 
-With both algorithms it could be shown that the architecture of the surrounding buildings and the background of the images play a major role. In addition, reference is often made to several areas of the image. To summarise, it can be concluded that the analysis with both algorithms is successful, even if the algorithms make different statements in some cases.
+With both algorithms it could be shown that the architecture of the surrounding buildings and the background of the images play a major role. Unique buildings like Big Ben are also important, but due to the high density of geocells, the background is also needed. In addition, reference is often made to several areas of the image. To summarise, it can be concluded that the analysis with both algorithms are successful, even if the algorithms make different statements in some cases.
 
 ## References
 
