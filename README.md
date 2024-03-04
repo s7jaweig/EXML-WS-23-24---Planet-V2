@@ -247,10 +247,10 @@ With both algorithms it could be shown that the architecture of the surrounding 
 
 ## Referenzen
 
-* [https://www.kaggle.com/models/google/planet-v2](https://www.kaggle.com/models/google/planet-v2)
-* [http://s2geometry.io/](http://s2geometry.io/)
 * Weyand, T., Kostrikov, I., & Philbin, J. (2016). Planet-photo geolocation with convolutional neural networks. In Computer Vision-ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part VIII 14 (pp. 37-55). Springer International Publishing.
 * Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2818-2826).
-
+* [https://www.kaggle.com/models/google/planet-v2](https://www.kaggle.com/models/google/planet-v2)
+* [http://s2geometry.io/](http://s2geometry.io/)
+  
 EXML WS23/24 Uni Bonn - Explainable Machine Learinig Seminar: Planet-V2
 by Franziskus Henkelmann, Jakob Weigand and Adrian Weng in February 2024
