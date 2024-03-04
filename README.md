@@ -207,13 +207,13 @@ In a further test, two images taken at the same location were analyzed. The diff
   
 In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
-## Zusammenfassung
+## Conclusion
 
 In this project, the PlaNet network is analysed in more detail in order to understand which parts of the image are particularly important for the network's decision. To this end, two methods are used to mask parts of the image.
 
 With both algorithms it could be shown that the architecture of the surrounding buildings and the background of the images play a major role. In addition, reference is often made to several areas of the image. To summarise, it can be concluded that the analysis with both algorithms is successful, even if the algorithms make different statements in some cases.
 
-## Referenzen
+## References
 
 * Weyand, T., Kostrikov, I., & Philbin, J. (2016). Planet-photo geolocation with convolutional neural networks. In Computer Vision-ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part VIII 14 (pp. 37-55). Springer International Publishing.
 * Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2818-2826).
