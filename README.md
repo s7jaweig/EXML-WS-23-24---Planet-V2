@@ -64,7 +64,7 @@ An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_
 
 <p>
   <img src="./readme/london.png" width="350" /> 
-  <img src="./readme/Ergebnis-london.jpg" width="350" />
+  <img src="./readme/Ergebnis-london.jpg" width="600" />
 </p>
 <p>
   <em>Fig 3: Picture of the Big Ben in London (left) and its geoplot (right)</em>
