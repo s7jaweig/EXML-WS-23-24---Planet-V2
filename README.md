@@ -40,7 +40,7 @@ First a raw image is defined which needs to be processed in the workflow. The ne
 
 ### Sliding BlackBox
 
-The sliding black box approach follows the strategy of covering part of a raw image with a black box. To do this, a black box is slide over the raw image step by step in columns and rows. The black box is slid over the image both vertically and horizontally with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the Planet-V2. For the raw image, the geocell with the highest probability is detected. The scores for all images in the dataset predicted by the Planet-V2 in relation to the previously detected geocell are saved and provided for the creation of the heatmap. Each area of the heatmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
+The Sliding BlackBox approach follows the strategy of covering a part of the raw image with a black box. To do this, a black box slides over the raw image step by step in columns and rows. The black box slides over the image in vertically and horizontally direction with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the Planet-V2. For the raw image, the geocell with the highest probability is detected. The scores for all images in the dataset predicted by the Planet-V2 in relation to the previously detected geocell are saved and provided for the creation of the heatmap. Each area of the heatmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
 
 ### Superpixel
 
@@ -69,14 +69,14 @@ An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_
   <em>Fig 3: Picture of the Big Ben in London (left) and its geoplot (right)</em>
 </p>
 
-Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Minster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
+Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Münster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
 
 <p>
   <img src="./readme/B_Muenster.jpg" width="350" /> 
   <img src="./readme/Ergebnis-B_Muenster.jpg" width="450" /> 
 </p>
 <p>
-  <em>Fig 4: Picture of the Bonner Minster in Bonn (left) and its geoplot (right)</em>
+  <em>Fig 4: Picture of the Bonner Münster in Bonn (left) and its geoplot (right)</em>
 </p>
 
 The [Matterhorn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG/800px-3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG) is assigned to the correct cell 3687 with a probability of over 85%. This is intended to investigate the decision behaviour of mountains.
@@ -112,8 +112,8 @@ The network assigned the summer picture to different regions of the world. Howev
 Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
 <p>
-  <img src="./readme/Loewe_Krueger.png" width="400" /> 
-  <img src="./readme/Loewe_Zoo.png" width="350" /> 
+  <img src="./readme/Loewe_Krueger.png" height="220" /> 
+  <img src="./readme/Loewe_Zoo.png" height="220" /> 
 </p>
 <p>
   <em>Fig 8: Picture of lions in nature (left) and in a zoo (right)</em>
