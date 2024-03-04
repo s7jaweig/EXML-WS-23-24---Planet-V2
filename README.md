@@ -1,8 +1,7 @@
 # Concept discovery of Planet-V2 using Superpixel and Sliding Black Box
 
 
-- Reichenfolge der Daten/Ergebnisse?
-- Superpixel ReadMe anpassen mit Titus Teil
+- Reichenfolge der Daten/Ergebnisse
 - Tiger vs Lion
 
 PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
@@ -22,7 +21,7 @@ The network is based on the Interception V3 architecture for  image classificati
   <em>Fig 1: Accurency of PlaNet</em>
 </p>
 
-The network is trained with the help of 9.1 million georeferenced images from the Internet. In the paper by Tobias Weyand et al. the network is analysed for accuracy using a photo dataset from Flickr. The results are shown in Figure 1. The country accuracy is 28.4% and the continent accuracy is 48% for the top-1 prediction.
+The network is trained with 9.1 million georeferenced images from the Internet. In the paper by Tobias Weyand et al. the network is analysed for accuracy, using a photo dataset from Flickr. The results are shown in Figure 1. The country accuracy is 28.4% and the continent accuracy is 48% for the top-1 prediction.
 
 ## Requirements
 
@@ -30,7 +29,7 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 
 ## Workflow 
 
-First a raw image is defined which is to be processed in the workflow. The next step is to prepare the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images of the data sets of the superpixel, the sliding black box and the raw images are sent through the neural network. The output for each individual image is the probability of how many percent of the image in the top 5 tiles has been solved. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
+First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the superpixel approach, the sliding black box and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
 
 <p>
   <img src="./readme/workflow.png" width="350" /> 
