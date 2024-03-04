@@ -1,9 +1,5 @@
 # Concept discovery of Planet-V2 using Superpixel and Sliding Black Box
 
-
-- Reichenfolge der Daten/Ergebnisse
-- Tiger vs Lion
-
 PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
 This project was part of the Explainable Machine Learning seminar by Prof. Ribana Roscher, University of Bonn.
@@ -195,7 +191,7 @@ As demonstrated in the previous chapter, the localization of the lions in the zo
 </p>
   <em>Fig. 14: Heatmaps for Lion in Krueger National Park</em>
 
-The network predicted the correct region for wild lions. Both approaches show that the lion and tiger have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lion and tiger, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
+The network predicted the correct region for wild lions. Both approaches show that the lions have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lions, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
 
 
 ## Conclusion
