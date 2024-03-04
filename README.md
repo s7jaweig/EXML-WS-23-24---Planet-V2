@@ -67,7 +67,7 @@ An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_
 
 <p>
   <img src="./readme/london.png" width="350" /> 
-  <img src="./readme/Ergebnis-london.jpg" width="600" />
+  <img src="./readme/Ergebnis-london.jpg" width="450" />
 </p>
 <p>
   <em>Fig 3: Picture of the Big Ben in London (left) and its geoplot (right)</em>
@@ -77,7 +77,7 @@ Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k
 
 <p>
   <img src="./readme/B_Muenster.jpg" width="350" /> 
-  <img src="./readme/Ergebnis-B_Muenster.jpg" width="600" /> 
+  <img src="./readme/Ergebnis-B_Muenster.jpg" width="450" /> 
 </p>
 <p>
   <em>Fig 4: Picture of the Bonner Minster in Bonn (left) and its geoplot (right)</em>
@@ -87,7 +87,7 @@ The [Matterhorn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/3818_
 
 <p>
   <img src="./readme/Matterhorn.png" width="350" /> 
-  <img src="./readme/Ergebnis-Matterhorn.jpg" width="600" />
+  <img src="./readme/Ergebnis-Matterhorn.jpg" width="450" />
 </p>
 <p>
   <em>Fig 5: Picture of the Matterhorn in Switzerland (left) and its geoplot (right)</em>
@@ -116,7 +116,7 @@ The network assigned the summer picture to different regions of the world. Howev
 Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
 <p>
-  <img src="./readme/Loewe_Krueger.png" width="350" /> 
+  <img src="./readme/Loewe_Krueger.png" width="450" /> 
   <img src="./readme/Loewe_Zoo.png" width="350" /> 
 </p>
 <p>
