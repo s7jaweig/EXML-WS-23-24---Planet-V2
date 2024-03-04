@@ -64,15 +64,10 @@ An [image](https://cdn.ems-ambulance.com/media/_1274x1625_crop_center-center_80_
 
 <p>
   <img src="./readme/london.png" width="350" /> 
+  <img src="./readme/Ergebnis-london.jpg" width="350" />
 </p>
 <p>
-  <em>Fig 3: Big Ben in London</em>
-</p>
-<p>
-  <img src="./readme/Ergebnis-london.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 4: Geoplots Big Ben</em>
+  <em>Fig 3: Picture of the Big Ben in London (left) and its geoplot (right)</em>
 </p>
 
 Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k8Nk7WHJVG86TC_ITVw0cHZpKSs2gODKLS7Wb77bW) analysed is a photo of the Bonn Minster in Bonn, a somewhat less well-known city landmark. This is wrongly assigned with 24% to Koblenz.
