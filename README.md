@@ -1,12 +1,12 @@
-# Concept discovery of Planet-V2 using Superpixel and Sliding Black Box
+# Concept discovery of PlaNet-V2 using Superpixel and Sliding BlackBox
 
-PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
+PlaNet is a convolutional neural network for geolocalizing images. In this project, the network is analysed more closely and a statement is made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A Superpixel algorithm and a Sliding BlackBox algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
 This project was part of the Explainable Machine Learning seminar by Prof. Ribana Roscher, University of Bonn.
 
 ## PlaNet 
 
-The convolutional neural network PlaNet can goelocalise images. For this purpose, only the pixels of the image are used as input information and the network outputs a probability distribution over the entire earth for the potential location where the image was taken. The PlaNet network was developed together with Google and published by Tobias Weyand et al. in the paper ["Planet-photo geolocation with convolutional neural networks"](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_3).
+The convolutional neural network PlaNet can goelocalize images. For this purpose, only the pixels of the image are used as input information and the network outputs a probability distribution over the entire earth for the potential location where the image was taken. The PlaNet network was developed together with Google and published by Tobias Weyand et al. in the paper ["Planet-photo geolocation with convolutional neural networks"](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_3).
 
 The network is based on the Interception V3 architecture for  image classification according to Christian Szegedy et al. and was presented in the paper ["Rethinking the inception architecture for computer vision"](https://arxiv.org/abs/1512.00567). The division of the earth for the assignment of probabilities is based on the [S2 geometry](http://s2geometry.io/) of Google.
 
@@ -25,7 +25,7 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 
 ## Workflow 
 
-First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a sliding black box that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the superpixel approach, the sliding black box and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by Planet-V2.
+First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a Sliding BlackBox that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the Superpixel approach, the Sliding BlackBox and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by PlaNet.
 
 <p>
   <img src="./readme/workflow.png" width="350" /> 
@@ -36,11 +36,11 @@ First a raw image is defined which needs to be processed in the workflow. The ne
 
 ### Sliding BlackBox
 
-The Sliding BlackBox approach follows the strategy of covering a part of the raw image with a black box. To do this, a black box slides over the raw image step by step in columns and rows. The black box slides over the image in vertically and horizontally direction with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the Planet-V2. For the raw image, the geocell with the highest probability is detected. The scores for all images in the dataset predicted by the Planet-V2 in relation to the previously detected geocell are saved and provided for the creation of the heatmap. Each area of the heatmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
+The Sliding BlackBox approach follows the strategy of covering a part of the raw image with a black box. To do this, a black box slides over the raw image step by step in columns and rows. The black box slides over the image in vertically and horizontally direction with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the PlaNet. For the raw image, the geocell with the highest probability is detected. The scores for all images in the data set predicted by the PlaNet in relation to the previously detected geocell are saved and provided for the creation of the heat map. Each area of the hea tmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
 
 ### Superpixel
 
-The concept of superpixels is akin to that of the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/tree/main?tab=readme-ov-file#sliding-blackbox).  The image is initially partitioned into superpixels, which are regions of similarity within an image, such as the sky, buildings, or vegetation. Typically, an image is divided into approximately 15 superpixels, although the exact number depends on the context being depicted. The aim is to identify which region has a significant impact on the final outcome. The Planet is then applied to the original image. The geocell with the highest output is identified and applied to each superpixel. Only the geocell with the corresponding score that produced the maximum output for the original image is of interest. The scores are then compared to determine which area of the image had a significant impact on the original image's result. To enhance comprehension of the results, the score values of the superpixels are scaled to a range of 0 to 255 and displayed in colour within the image.
+The concept of Superpixels is akin to that of the [Sliding BlackBox](https://github.com/s7jaweig/EXML-WS-23-24---Planet-V2/tree/main?tab=readme-ov-file#sliding-blackbox).  The image is initially partitioned into superpixels, which are regions of similarity within an image, such as the sky, buildings, or vegetation. Typically, an image is divided into approximately 15 superpixels, although the exact number depends on the context being depicted. The aim is to identify which region has a significant impact on the final outcome. The PlaNet is then applied to the original image. The geocell with the highest output is identified and applied to each superpixel. Only the geocell with the corresponding score that produced the maximum output for the original image is of interest. The scores are then compared to determine which area of the image had a significant impact on the original image's result. To enhance comprehension of the results, the score values of the superpixels are scaled to a range of 0 to 255 and displayed in colour within the image.
 
 
 ### Network
@@ -139,7 +139,7 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
 
 The results for Big Ben in London appear contradictory. Big Ben is of little interest for the Sliding BlackBox, possibly due to the high density of geocells in central London. Several cells offer a view of Big Ben alone, but in combination with the surrounding areas, which are of greater interest for the Sliding BlackBox approach, Big Ben becomes less relevant. The telephone boxes and adjacent building in the foreground are relevant to the selected cell.
 In contrast, the Big Ben is of great interest for the Superpixel approach due to its clear association with London. The remaining individual superpixels, however, cannot produce satisfactory results on their own and are not associated with London by the neural network. 
-This image demonstrates the significance of context, which, on its own, does not have a strong influence (as seen in superpixels), but has a greater overall impact than a single building. The importance of context is evident in this image.
+This image demonstrates the significance of context, which, on its own, does not have a strong influence (as seen in Superpixels), but has a greater overall impact than a single building. The importance of context is evident in this image.
 
 <p>
   <img src="./readme/B_Muenster_combined.png" width="350" />
@@ -149,7 +149,7 @@ This image demonstrates the significance of context, which, on its own, does not
   <em>Fig. 10: Heatmaps for Bonner Münster</em>
 </p>
 
-The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heatmap is stronger for Superpixels than for Sliding BlackBox.
+The heat map for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heat map is stronger for Superpixels than for Sliding BlackBox.
 
 <p>
   <img src="./readme/Matterhorn_combined.png" height="250" />
@@ -159,7 +159,7 @@ The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Müns
   <em>Fig. 12: Heatmaps for Matterhorn</em>
 </p>
 
-The analysis of the Matterhorn image yielded impressive results. Planet-V2 accurately predicted the geocell in Switzerland where the image was taken with a high confidence level of 85%. Additionally, all other geocells are located nearby in Switzerland. Our analysis revealed the image areas that contributed the most to this decision. It is noteworthy that humans can easily recognize the Matterhorn's characteristic peak. However, both the superpixel and sliding black box approaches have detected relevant image information at the foot of the mountain.
+The analysis of the Matterhorn image yielded impressive results. PlaNet accurately predicted the geocell in Switzerland where the image was taken with a high confidence level of 85%. Additionally, all other geocells are located nearby in Switzerland. Our analysis revealed the image areas that contributed the most to this decision. It is noteworthy that humans can easily recognize the Matterhorn's characteristic peak. However, both the Superpixel and Sliding BlackBox approaches have detected relevant image information at the foot of the mountain.
 
 <p>
   <img src="./readme/See_Sommer_combined.png" width="350" />
@@ -167,7 +167,7 @@ The analysis of the Matterhorn image yielded impressive results. Planet-V2 accur
 </p>
   <em>Fig. 15: Heatmaps for Sea in Sommer season</em>
 
-In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with superpixels and the sliding black box, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here. The lake area is not of interest for both approaches, beacuse it is not unique for any region worldwide.
+In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with Superpixels and the Sliding BlackBox, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here. The lake area is not of interest for both approaches, beacuse it is not unique for any region worldwide.
 
 <p>
   <img src="./readme/See_Winter_combined.png" width="350" />
@@ -175,7 +175,7 @@ In a further test, two images taken at the same location were analyzed. The diff
 </p>
   <em>Fig. 16: Heatmaps for Sea in Winter season</em>
   
-In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
+In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the Superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the Sliding BlackBox approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
 <p>
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
