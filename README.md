@@ -1,9 +1,9 @@
 # Concept discovery of Planet-V2 using Superpixel and Sliding BlackBox
 
-Bildnummern kontorllieren!!!!!!!
-Braucht ihr noch mehr Referenzen?
-Bildunterschriften?
-Reichenfolge der Daten/Ergebnisse?
+- Bildnummern kontorllieren!!!!!!!
+- Braucht ihr noch mehr Referenzen?
+- Bildunterschriften?
+- Reichenfolge der Daten/Ergebnisse?
 
 PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
@@ -188,6 +188,9 @@ The first raw image chosen was a picture of Bonn Minster. The Planet-V2 predicte
   <em>Fig. X: Heatmaps for Big Ben in London</em>
 </p>
 
+The results for Big Ben in London appear contradictory. Big Ben is of little interest for the Sliding BlackBox, possibly due to the high density of geocells in central London. Several cells offer a view of Big Ben alone, but in combination with the surrounding areas, which are of greater interest for the Sliding BlackBox approach, Big Ben becomes less relevant. The telephone boxes and adjacent building in the foreground are relevant to the selected cell.
+In contrast, the Big Ben is of great interest for the Superpixel approach due to its clear association with London. The remaining individual superpixels, however, cannot produce satisfactory results on their own and are not associated with London by the neural network. 
+This image demonstrates the significance of context, which, on its own, does not have a strong influence (as seen in superpixels), but has a greater overall impact than a single building. The importance of context is evident in this image.
 
 
 <p>
