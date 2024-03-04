@@ -176,7 +176,7 @@ The analysis of the Matterhorn image yielded impressive results. Planet-V2 accur
 </p>
   <em>Fig. 13: Heatmaps for Lion in Zoo</em>
 
-As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide, but not the correct cell. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo. It is important to note that the tigers have only a minor influence.
+As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide, but not the correct cell. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo. It is important to note that the lions have only a minor influence.
   
 <p>
   <img src="./readme/Loewe_Krueger_combined.png" height="200" />
