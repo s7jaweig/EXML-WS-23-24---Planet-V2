@@ -134,18 +134,6 @@ The lions in the wild were correctly located in Kruger National Park, South Afri
 The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
 
 <p>
-  <img src="./readme/B_Muenster_combined.png" width="350" />
-  <img src="./readme/Overlapped_B_Muenster.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig. 10: Heatmaps for Bonner Münster</em>
-</p>
-
-The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant. The heatmap is stronger for Superpixels than for Sliding BlackBox.
-
-[//]: # (The first raw image chosen was a picture of Bonn Münster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.)
-
-<p>
   <img src="./readme/london_combined.png" width="350" />
   <img src="./readme/Overlapped_london.jpg" width="350" /> 
 </p>
@@ -157,6 +145,15 @@ The results for Big Ben in London appear contradictory. Big Ben is of little int
 In contrast, the Big Ben is of great interest for the Superpixel approach due to its clear association with London. The remaining individual superpixels, however, cannot produce satisfactory results on their own and are not associated with London by the neural network. 
 This image demonstrates the significance of context, which, on its own, does not have a strong influence (as seen in superpixels), but has a greater overall impact than a single building. The importance of context is evident in this image.
 
+<p>
+  <img src="./readme/B_Muenster_combined.png" width="350" />
+  <img src="./readme/Overlapped_B_Muenster.jpg" width="350" /> 
+</p>
+<p>
+  <em>Fig. 10: Heatmaps for Bonner Münster</em>
+</p>
+
+The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heatmap is stronger for Superpixels than for Sliding BlackBox.
 
 <p>
   <img src="./readme/Matterhorn_combined.png" height="250" />
@@ -168,7 +165,21 @@ This image demonstrates the significance of context, which, on its own, does not
 
 The analysis of the Matterhorn image yielded impressive results. Planet-V2 accurately predicted the geocell in Switzerland where the image was taken with a high confidence level of 85%. Additionally, all other geocells are located nearby in Switzerland. Our analysis revealed the image areas that contributed the most to this decision. It is noteworthy that humans can easily recognize the Matterhorn's characteristic peak. However, both the superpixel and sliding black box approaches have detected relevant image information at the foot of the mountain.
 
-[//]: # (The analysis of the results for the image of the Matterhorn was very impressive. The Planet-V2 predicted the geocell in Switzerland where the image was actually taken with a high confidence of 85%. All other geocells are also located nearby and in Switzerland. What is surprising, however, is which image areas contributed the most to this decision with the help of our analysis. We humans would immediately recognize an image of this mountain by its characteristic peak. However, the superpixel and sliding black box approaches have also detected image information at the foot of the mountain as relevant.)
+<p>
+  <img src="./readme/See_Sommer_combined.png" width="350" />
+  <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
+</p>
+  <em>Fig. 15: Heatmaps for Sea in Sommer season</em>
+
+In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with superpixels and the sliding black box, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here. The lake area is not of interest for both approaches, beacuse it is not unique for any region worldwide.
+
+<p>
+  <img src="./readme/See_Winter_combined.png" width="350" />
+  <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
+</p>
+  <em>Fig. 16: Heatmaps for Sea in Winter season</em>
+  
+In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
 <p>
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
@@ -186,22 +197,6 @@ As demonstrated in the previous chapter, the localization of the lions in the zo
 
 The network predicted the correct region for wild lions. Both approaches show that the lion and tiger have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lion and tiger, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
 
-<p>
-  <img src="./readme/See_Sommer_combined.png" width="350" />
-  <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
-</p>
-  <em>Fig. 15: Heatmaps for Sea in Sommer season</em>
-
-In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with superpixels and the sliding black box, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here.
-
-
-<p>
-  <img src="./readme/See_Winter_combined.png" width="350" />
-  <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
-</p>
-  <em>Fig. 16: Heatmaps for Sea in Winter season</em>
-  
-In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
 ## Conclusion
 
