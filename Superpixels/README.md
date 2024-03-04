@@ -9,7 +9,12 @@ All code is done with Python. Do not change folder structure or delete files!
 
 -------------------------------------------------------------------------------------------------
 
-1. Create Superpixels
+### Prerequisites
+- Python 3.x
+- Required libraries: numpy, matplotlib, skimage, PIL, cv2
+
+### Usage
+1. Create Superpixels and analyze them
 	* Choose yourself a image that you want to analyze. Insert it in the folder "Superpixels"
 	   best with the ending jpg.
 	* Run the file "Planet_SuperPixel.py". It generates the Superpixels and saves them in a
