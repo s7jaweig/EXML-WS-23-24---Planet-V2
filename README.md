@@ -212,7 +212,7 @@ The analysis of the Matterhorn image yielded impressive results. Planet-V2 accur
 </p>
   <em>Fig. X: Heatmaps for Lion in Zoo</em>
 
-As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo, as it could have been taken in the wild in Africa. It is important to note that the tigers have only a minor influence.
+As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide, but not the correct cell. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo. It is important to note that the tigers have only a minor influence.
   
 <p>
   <img src="./readme/Loewe_Krueger_combined.png" height="200" />
@@ -220,6 +220,7 @@ As demonstrated in the previous chapter, the localization of the lions in the zo
 </p>
   <em>Fig. X: Heatmaps for Lion in Krueger National Park</em>
 
+The network predicted the correct region for wild lions. Both approaches show that the lion and tiger have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lion and tiger, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
 
 <p>
   <img src="./readme/See_Sommer_combined.png" width="350" />
