@@ -177,8 +177,9 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
   <em>Fig. X: Heatmaps for Bonner Münster</em>
 </p>
 
-[//]: # (The first raw image chosen was a picture of Bonn Münster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.)
+The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant. The heatmap is stronger for Superpixels than for Sliding BlackBox.
 
+[//]: # (The first raw image chosen was a picture of Bonn Münster. The Planet-V2 predicted all top 5 guesses in geocells with German cities like Mainz, Cologne, Trier and Koblenz. These cities also have large churches that are comparable to Bonner Münster. The correct geocell of Bonn is in 4th place with 6%. The two approaches superpixel and sliding black box produced corresponding results. As expected, the analysis showed that in both cases the church building and the associated towers were the most influential factor in the neural network's decision.)
 
 <p>
   <img src="./readme/london_combined.png" width="350" />
@@ -201,7 +202,9 @@ This image demonstrates the significance of context, which, on its own, does not
   <em>Fig. X: Heatmaps for Matterhorn</em>
 </p>
 
-The analysis of the results for the image of the Matterhorn was very impressive. The Planet-V2 predicted the geocell in Switzerland where the image was actually taken with a high confidence of 85%. All other geocells are also located nearby and in Switzerland. What is surprising, however, is which image areas contributed the most to this decision with the help of our analysis. We humans would immediately recognize an image of this mountain by its characteristic peak. However, the superpixel and sliding black box approaches have also detected image information at the foot of the mountain as relevant.
+The analysis of the Matterhorn image yielded impressive results. Planet-V2 accurately predicted the geocell in Switzerland where the image was taken with a high confidence level of 85%. Additionally, all other geocells are located nearby in Switzerland. Our analysis revealed the image areas that contributed the most to this decision. It is noteworthy that humans can easily recognize the Matterhorn's characteristic peak. However, both the superpixel and sliding black box approaches have detected relevant image information at the foot of the mountain.
+
+[//]: # (The analysis of the results for the image of the Matterhorn was very impressive. The Planet-V2 predicted the geocell in Switzerland where the image was actually taken with a high confidence of 85%. All other geocells are also located nearby and in Switzerland. What is surprising, however, is which image areas contributed the most to this decision with the help of our analysis. We humans would immediately recognize an image of this mountain by its characteristic peak. However, the superpixel and sliding black box approaches have also detected image information at the foot of the mountain as relevant.)
 
 <p>
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
@@ -209,6 +212,7 @@ The analysis of the results for the image of the Matterhorn was very impressive.
 </p>
   <em>Fig. X: Heatmaps for Lion in Zoo</em>
 
+As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo, as it could have been taken in the wild in Africa. It is important to note that the tigers have only a minor influence.
   
 <p>
   <img src="./readme/Loewe_Krueger_combined.png" height="200" />
