@@ -106,8 +106,8 @@ To analyse the network in landscapes in summer and winter, two images (private) 
 The network assigned the summer picture to different regions of the world. However, all locations were assigned to the correct latitude. In winter, the image was assigned to the Alps in the top 5 predictions, which is close to where the picture was taken.
 
 <p>
-  <img src="./readme/Ergebnis-See_Sommer.jpg" width="450" /> 
-  <img src="./readme/Ergebnis-See_Winter.jpg" width="450" /> 
+  <img src="./readme/Ergebnis-See_Sommer.jpg" width="400" /> 
+  <img src="./readme/Ergebnis-See_Winter.jpg" width="400" /> 
 </p>
 <p>
   <em>Fig 7: Geoplot of the summer picture (left) and of the winter picture (right)</em>
@@ -126,8 +126,8 @@ Finally, two lion images are analysed with the network. The lions are once in th
 The lions in the wild were correctly located in Kruger National Park, South Africa. The lions from the zoo in Gelsenkirchen were not placed exactly in Gelsenkirchen, but were only assigned to regions in which there are zoos.
 
 <p>
-  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="450" /> 
-  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="450" />
+  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="400" /> 
+  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="400" />
 </p>
 <p>
   <em>Fig 9: Geoplot of the picture in nature (left) and in a zoo (right)</em>
