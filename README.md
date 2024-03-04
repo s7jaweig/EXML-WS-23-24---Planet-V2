@@ -7,6 +7,7 @@
 - Superpixel ReadMe anpassen mit Titus Teil
 - ReadMe für Network kurz ergänzen
 - ReadMe für Geoplots kurz ergänzen
+  ------------------------------
 
 PlaNet is a convolutional neural network for geolocalising images. In this project, the network is to be analysed more closely and a statement is to be made about how the network makes its decision and which parts of the image make the greatest contribution to this. For this purpose, a worklow was created (see figure 2) and applied to selected images. A superpixel algorithm and a sliding box algorithm were developed to mask certain areas in the image and test the sensitivity of the network to them.
 
@@ -212,6 +213,8 @@ In the winter image, however, the predicted geocells are distributed very differ
 In this project, the PlaNet network is analysed in more detail in order to understand which parts of the image are particularly important for the network's decision. To this end, two methods are used to mask parts of the image.
 
 With both algorithms it could be shown that the architecture of the surrounding buildings and the background of the images play a major role. In addition, reference is often made to several areas of the image. To summarise, it can be concluded that the analysis with both algorithms is successful, even if the algorithms make different statements in some cases.
+
+------------------------------
 
 ## References
 
