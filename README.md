@@ -116,7 +116,7 @@ The network assigned the summer picture to different regions of the world. Howev
 Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
 <p>
-  <img src="./readme/Loewe_Krueger.png" width="450" /> 
+  <img src="./readme/Loewe_Krueger.png" width="400" /> 
   <img src="./readme/Loewe_Zoo.png" width="350" /> 
 </p>
 <p>
