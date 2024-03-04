@@ -13,8 +13,8 @@ The code runs in JupyterLab. All required files and folder structures are includ
 1. Run the first two cells so load all libraries and functions
 2. Copy the folder with the pictures from the different approaches in the `images` folder
 4. Fill in the arrays with the image names and further information and run the corresponding cell depending on the approach
-   - Cell 3 for sliding box approach
-   - Cell 4 for superpixel approach
+   - Cell 3 for Sliding BlackBox approach
+   - Cell 4 for Superpixel approach
    - Cell 5 for geoplots
 5. Copy the txt-files from the `results` folder and go on with the other steps in the approaches
 
