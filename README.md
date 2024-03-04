@@ -77,90 +77,60 @@ Another [image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSwARR5_k
 
 <p>
   <img src="./readme/B_Muenster.jpg" width="350" /> 
+  <img src="./readme/Ergebnis-B_Muenster.jpg" width="600" /> 
 </p>
 <p>
-  <em>Fig 5: Bonner Muenster in Bonn</em>
-</p>
-<p>
-  <img src="./readme/Ergebnis-B_Muenster.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 6: Geoplots Bonner Muenster</em>
+  <em>Fig 4: Picture of the Bonner Minster in Bonn (left) and its geoplot (right)</em>
 </p>
 
 The [Matterhorn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG/800px-3818_-_Riffelberg_-_Matterhorn_viewed_from_Gornergratbahn.JPG) is assigned to the correct cell 3687 with a probability of over 85%. This is intended to investigate the decision behaviour of mountains.
 
 <p>
   <img src="./readme/Matterhorn.png" width="350" /> 
+  <img src="./readme/Ergebnis-Matterhorn.jpg" width="600" />
 </p>
 <p>
-  <em>Fig 7: Matterhon in Switzerland</em>
-</p>
-<p>
-  <img src="./readme/Ergebnis-Matterhorn.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 8: Geoplots Matterhorn</em>
+  <em>Fig 5: Picture of the Matterhorn in Switzerland (left) and its geoplot (right)</em>
 </p>
 
 To analyse the network in landscapes in summer and winter, two images (private) were used that were taken at exactly the same location at different times of the year.
 
 <p>
   <img src="./readme/See_Sommer.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 9: Mummelsee, Schwarzwald, in the summer</em>
-</p>
-<p>
   <img src="./readme/See_Winter.jpg" width="350" /> 
 </p>
 <p>
-  <em>Fig 10:  Mummelsee, Schwarzwald, in the winter</em>
+  <em>Fig 6: Picture of the Mummelsee, Schwarzwald, in the summer (left) and in the winter (right)</em>
 </p>
 
 The network assigned the summer picture to different regions of the world. However, all locations were assigned to the correct latitude. In winter, the image was assigned to the Alps in the top 5 predictions, which is close to where the picture was taken.
 
 <p>
-  <img src="./readme/Ergebnis-See_Sommer.jpg" width="350" /> 
+  <img src="./readme/Ergebnis-See_Sommer.jpg" width="450" /> 
+  <img src="./readme/Ergebnis-See_Winter.jpg" width="450" /> 
 </p>
 <p>
-  <em>Fig 11: Geoplot summer picture</em>
-</p>
-<p>
-  <img src="./readme/Ergebnis-See_Winter.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 12:  Geoplot winter picture</em>
+  <em>Fig 7: Geoplot of the summer picture (left) and of the winter picture (right)</em>
 </p>
 
 Finally, two lion images are analysed with the network. The lions are once in the [wild](https://www.merkur.de/assets/images/2/175/2175880-in-suedafrika-ist-ein-75-jahre-alter-kroate-bei-der-loewenjagd-getoetet-worden-foto-philipp-laage-illustration-3s70.jpg) and once in the [zoo](https://media04.lokalkompass.de/article/2022/04/08/2/12221392_XL.jpg?1649412972).
 
 <p>
   <img src="./readme/Loewe_Krueger.png" width="350" /> 
-</p>
-<p>
-  <em>Fig 13: Lion in nature</em>
-</p>
-<p>
   <img src="./readme/Loewe_Zoo.png" width="350" /> 
 </p>
 <p>
-  <em>Fig 14:  Lion in zoo</em>
+  <em>Fig 8: Picture of lions in nature (left) and in a zoo (right)</em>
 </p>
 
 The lions in the wild were correctly located in Kruger National Park, South Africa. The lions from the zoo in Gelsenkirchen were not placed exactly in Gelsenkirchen, but were only assigned to regions in which there are zoos.
 
 <p>
-  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="350" /> 
+  <img src="./readme/Ergebnis-Loewe_Krueger.jpg" width="450" /> 
+  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="450" />
 </p>
 <p>
-  <em>Fig 15: Geoplot lion nature</em>
-</p>
-<p>
-  <img src="./readme/Ergebnis-Loewe_Zoo.jpg" width="350" /> 
-</p>
-<p>
-  <em>Fig 16:  Geoplot lion zoo</em>
+  <em>Fig 9: Geoplot of the picture in nature (left) and in a zoo (right)</em>
 </p>
 
 ## Ergebnisse
@@ -172,7 +142,7 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
   <img src="./readme/Overlapped_B_Muenster.jpg" width="350" /> 
 </p>
 <p>
-  <em>Fig. X: Heatmaps for Bonner Münster</em>
+  <em>Fig. 10: Heatmaps for Bonner Münster</em>
 </p>
 
 The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant. The heatmap is stronger for Superpixels than for Sliding BlackBox.
@@ -184,7 +154,7 @@ The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Müns
   <img src="./readme/Overlapped_london.jpg" width="350" /> 
 </p>
 <p>
-  <em>Fig. X: Heatmaps for Big Ben in London</em>
+  <em>Fig. 11: Heatmaps for Big Ben in London</em>
 </p>
 
 The results for Big Ben in London appear contradictory. Big Ben is of little interest for the Sliding BlackBox, possibly due to the high density of geocells in central London. Several cells offer a view of Big Ben alone, but in combination with the surrounding areas, which are of greater interest for the Sliding BlackBox approach, Big Ben becomes less relevant. The telephone boxes and adjacent building in the foreground are relevant to the selected cell.
@@ -197,7 +167,7 @@ This image demonstrates the significance of context, which, on its own, does not
   <img src="./readme/Overlapped_Matterhorn.png" height="250" /> 
 </p>
 <p>
-  <em>Fig. X: Heatmaps for Matterhorn</em>
+  <em>Fig. 12: Heatmaps for Matterhorn</em>
 </p>
 
 The analysis of the Matterhorn image yielded impressive results. Planet-V2 accurately predicted the geocell in Switzerland where the image was taken with a high confidence level of 85%. Additionally, all other geocells are located nearby in Switzerland. Our analysis revealed the image areas that contributed the most to this decision. It is noteworthy that humans can easily recognize the Matterhorn's characteristic peak. However, both the superpixel and sliding black box approaches have detected relevant image information at the foot of the mountain.
@@ -208,7 +178,7 @@ The analysis of the Matterhorn image yielded impressive results. Planet-V2 accur
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
   <img src="./readme/Overlapped_Loewe_Zoo.png" width="350" /> 
 </p>
-  <em>Fig. X: Heatmaps for Lion in Zoo</em>
+  <em>Fig. 13: Heatmaps for Lion in Zoo</em>
 
 As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide, but not the correct cell. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo. It is important to note that the tigers have only a minor influence.
   
@@ -216,7 +186,7 @@ As demonstrated in the previous chapter, the localization of the lions in the zo
   <img src="./readme/Loewe_Krueger_combined.png" height="200" />
   <img src="./readme/Overlapped_Loewe_Krueger.png" height="200" /> 
 </p>
-  <em>Fig. X: Heatmaps for Lion in Krueger National Park</em>
+  <em>Fig. 14: Heatmaps for Lion in Krueger National Park</em>
 
 The network predicted the correct region for wild lions. Both approaches show that the lion and tiger have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lion and tiger, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
 
@@ -224,7 +194,7 @@ The network predicted the correct region for wild lions. Both approaches show th
   <img src="./readme/See_Sommer_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
 </p>
-  <em>Fig. X: Heatmaps for Sea in Sommer season</em>
+  <em>Fig. 15: Heatmaps for Sea in Sommer season</em>
 
 In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with superpixels and the sliding black box, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here.
 
@@ -233,7 +203,7 @@ In a further test, two images taken at the same location were analyzed. The diff
   <img src="./readme/See_Winter_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
 </p>
-  <em>Fig. X: Heatmaps for Sea in Winter season</em>
+  <em>Fig. 16: Heatmaps for Sea in Winter season</em>
   
 In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the sliding black box approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
