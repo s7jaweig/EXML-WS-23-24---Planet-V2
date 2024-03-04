@@ -15,39 +15,41 @@ img_file_name = 'See_Sommer.jpg'
 
 # ================================================
 
-# Importfunktion für Scores aus Titus Skript
+# Function to import score values from the network output
 def importScores(input_txt_path):
     print("importing scores...")
     dateipfad = input_txt_path
     try:
         with open(dateipfad, 'r') as file:
             next(file)
-            # Lese alle Zeilen aus der Datei
+            # Read all columns out of the file
             lines = file.readlines()            
 
-            # Konkateniere die Zeilen und entferne überflüssige Zeichen
+            # Join columns and remove unnecessary symbols
             values_str = ''.join(lines).replace('[', '').replace(']', '').replace('\n', '')
             
-            # Konvertiere die Zeichenkette in eine Liste von Floats
+            # Convert string to list of floats
             values_list = [float(value) for value in values_str.split()]
 
+            # Return the value list 
             return values_list
 
+    # Catch Exception while import or converting
     except Exception as e:
         print(f"Fehler beim Lesen der Datei: {e}")
         return []  # Return an empty list in case of an error
     
 
-# Scores einladen
+# Import scores
 curr_path = os.path.dirname(__file__)
 scores = importScores(os.path.join(curr_path, txt_file_name))
 print(f'Imported {len(scores)} score values')
 
-# Labeled Index-Bild einladen
+# Load labeled Index-Image
 results = np.load(os.path.join(curr_path, 'Label_Idx.npy'))
 print(f'Shape {results.shape} with min {np.min(results)} and max {np.max(np.max(results))}')
 
-# Variablen für die weitere Berechnung
+# Set variables for further computations
 max_val = np.max(scores)
 for i in range(len(scores)):
     scores[i] = (scores[i]/max_val) * 255
@@ -60,17 +62,17 @@ for i in range(heatmap.shape[0]):
         idx = int(results[i, j])-1
         heatmap[i, j, :] = (scores[idx], scores[idx], scores[idx])
 
-# Konvertieren des Farbschemas nach Plasma
+# Convert color values to plasma
 img_plasma = heatmap.copy()
 img_plasma = cm.plasma(img_plasma[:,:,0])
 img_plasma = img_plasma[:,:,:3]
 
-# Plot erstellen mit reiner Heatmap und seitlicher Colorbar
+# Create plot with heatmap only and colorbar
 fig, ax = plt.subplots(figsize=(9, 6))
 cax = ax.imshow(img_plasma, cmap='plasma')
-# Hinzufügen einer Farbskala
+# Add Color skalar
 cbar = fig.colorbar(cax)
-# Beschriftung der Farbskala mit Min und Max Werten
+# Label the colorbar with min and max values
 cbar.set_label('Activation', rotation=270, labelpad=15)
 cbar.ax.get_yaxis().set_ticks([])
 for j, lab in enumerate(['Min', 'Max']):
@@ -80,20 +82,22 @@ plt.imsave(os.path.join(curr_path, "Heatmap_Plasma_" + txt_file_name + '.png'), 
 fig.savefig(os.path.join(curr_path, "Heatmap_Plasma_CBar" + txt_file_name + '.png'))
 
 
-# Laden Sie die beiden Bilder
+# Import both images
 img1 = cv2.imread(os.path.join(os.path.dirname(__file__), "Heatmap_Plasma_" + txt_file_name + '.png'), cv2.COLOR_RGB2BGR)
 img2 = cv2.imread(os.path.join(os.path.dirname(__file__), img_file_name))
 
-# Konvertieren Sie das RGB-Bild in ein Graustufenbild
+# Convert image to grayscale image
 gray_img = cv2.cvtColor(img2, cv2.COLOR_RGB2GRAY)
 
-# Konvertieren Sie das Graustufenbild in ein RGB-Bild
+# convert grayscale image to color RGB Image
 img2 = cv2.cvtColor(gray_img, cv2.COLOR_GRAY2RGB)
 
-# Überlagern Sie die beiden Bilder
+# Overlap both images (original image with heatmap)
 alpha = 0.5
 beta = 1 - alpha
 dst = cv2.addWeighted(img1, alpha, img2, beta, 0)
 
-# Abspeichern der Bilder
+# Save created image
 cv2.imwrite(os.path.join(os.path.dirname(__file__), "Overlapped_" + img_file_name), dst)
+
+
