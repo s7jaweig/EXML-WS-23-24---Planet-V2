@@ -1,4 +1,4 @@
-# Concept discovery of Planet-V2 using Superpixel and Sliding BlackBox
+# Concept discovery of Planet-V2 using Superpixel and Sliding Black Box
 
 
 - Reichenfolge der Daten/Ergebnisse?
