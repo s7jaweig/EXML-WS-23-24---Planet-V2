@@ -4,7 +4,7 @@ PlaNet is a convolutional neural network for geolocalising images. In this proje
 
 This project was part of the Explainable Machine Learning seminar by Prof. Ribana Roscher, University of Bonn.
 
-## PlaNet
+## PlaNet 
 
 The convolutional neural network PlaNet can goelocalise images. For this purpose, only the pixels of the image are used as input information and the network outputs a probability distribution over the entire earth for the potential location where the image was taken. The PlaNet network was developed together with Google and published by Tobias Weyand et al. in the paper ["Planet-photo geolocation with convolutional neural networks"](https://link.springer.com/chapter/10.1007/978-3-319-46484-8_3).
 
