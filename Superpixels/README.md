@@ -28,4 +28,3 @@ All code is done with Python. Do not change folder structure or delete files!
 	* All results are stored in your folder "Superpixels". You have an image with the over-
 	   lapped heatmap, an image with the heatmap only and an image with the colorbar.
 
--------------------------------------------------------------------------------------------------
