@@ -28,7 +28,7 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a Sliding BlackBox that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the Superpixel approach, the Sliding BlackBox and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heatmaps, which can identify image areas or image features that explain the decisions made by PlaNet.
 
 <p>
-  <img src="./readme/workflow.png" width="350" /> 
+  <img src="./readme/workflow.png" width="400" /> 
 </p>
 <p>
   <em>Fig 2: Workflow</em>
