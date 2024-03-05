@@ -134,7 +134,7 @@ The analysis and evaluation of the results from Sliding BlackBox and Superpixels
   <img src="./readme/Overlapped_london.jpg" width="350" /> 
 </p>
 <p>
-  <em>Fig. 11: Heatmaps for Big Ben in London</em>
+  <em>Fig. 10: Heatmaps for Big Ben in London</em>
 </p>
 
 The results for Big Ben in London appear contradictory. Big Ben is of little interest for the Sliding BlackBox, possibly due to the high density of geocells in central London. Several cells offer a view of Big Ben alone, but in combination with the surrounding areas, which are of greater interest for the Sliding BlackBox approach, Big Ben becomes less relevant. The telephone boxes and adjacent building in the foreground are relevant to the selected cell.
@@ -146,7 +146,7 @@ This image demonstrates the significance of context, which, on its own, does not
   <img src="./readme/Overlapped_B_Muenster.jpg" width="350" /> 
 </p>
 <p>
-  <em>Fig. 10: Heatmaps for Bonner Münster</em>
+  <em>Fig. 11: Heatmaps for Bonner Münster</em>
 </p>
 
 The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heatmap is stronger for Superpixels than for Sliding BlackBox.
@@ -165,7 +165,7 @@ The analysis of the Matterhorn image yielded impressive results. PlaNet accurate
   <img src="./readme/See_Sommer_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Sommer.jpg" width="350" /> 
 </p>
-  <em>Fig. 15: Heatmaps for Sea in Sommer season</em>
+  <em>Fig. 13: Heatmaps for Sea in Sommer season</em>
 
 In a further test, two images taken at the same location were analyzed. The difference is that one was taken in summer and the other in winter. The top 5 predictions for the summer image are distributed in Europe, North America and Central Asia. It is striking that all cells are located at approximately the same latitude. This could indicate similar characteristics of the vegetation in these areas. When analyzing with Superpixels and the Sliding BlackBox, the more distant vegetation is the most relevant. The foreground is rather uninteresting in both cases, as there is also a slight image blur here. The lake area is not of interest for both approaches, beacuse it is not unique for any region worldwide.
 
@@ -173,7 +173,7 @@ In a further test, two images taken at the same location were analyzed. The diff
   <img src="./readme/See_Winter_combined.png" width="350" />
   <img src="./readme/Overlapped_See_Winter.jpg" width="350" /> 
 </p>
-  <em>Fig. 16: Heatmaps for Sea in Winter season</em>
+  <em>Fig. 14: Heatmaps for Sea in Winter season</em>
   
 In the winter image, however, the predicted geocells are distributed very differently compared to the summer image. Here, all of the top 5 predictions are concentrated in the Alpine region in Europe. This image was actually taken not far from the Black Forest (Germany). The geocell that was predicted fifth is in the immediate neighborhood. Here, the Superpixel approach is used to detect the area of the frozen lake surface, the hotel and the vegetation in the background as influential. A similar behavior can be observed with the Sliding BlackBox approach. Here, the areas in the center of the image around the hotel are also weighted the highest. However, the snow-covered fir trees in the foreground are considered rather unimportant.
 
@@ -181,7 +181,7 @@ In the winter image, however, the predicted geocells are distributed very differ
   <img src="./readme/Loewe_Zoo_combined.png" width="350" />
   <img src="./readme/Overlapped_Loewe_Zoo.png" width="350" /> 
 </p>
-  <em>Fig. 13: Heatmaps for Lion in Zoo</em>
+  <em>Fig. 15: Heatmaps for Lion in Zoo</em>
 
 As demonstrated in the previous chapter, the localization of the lions in the zoo is inaccurate. Cells were selected where zoos exist worldwide, but not the correct cell. The superpixels reveal that the combination of vegetation in the background and the area with the grids have a greater influence on the result than the lions themselves. This is because the superpixel with the lions alone does not provide enough context to determine whether the image was taken in a zoo or in the wild in Africa. The superpixel containing only lions does not provide enough evidence to conclude that the image was taken in a zoo. It is important to note that the lions have only a minor influence.
   
@@ -189,7 +189,7 @@ As demonstrated in the previous chapter, the localization of the lions in the zo
   <img src="./readme/Loewe_Krueger_combined.png" height="200" />
   <img src="./readme/Overlapped_Loewe_Krueger.png" height="200" /> 
 </p>
-  <em>Fig. 14: Heatmaps for Lion in Krueger National Park</em>
+  <em>Fig. 16: Heatmaps for Lion in Krueger National Park</em>
 
 The network predicted the correct region for wild lions. Both approaches show that the lions have the greatest influence. The Sliding BlackBox approach highlights the importance of the environment surrounding the lions, which is typical of the savannah. The Superpixels approach also emphasizes the significance of the environment, with a major influence from the animals. Notably, the environment is more relevant than previously thought, specifically the typical savannah vegetation. This indicates that the network in this area has learned not only the animal species but also the type of environment. This is a positive outcome, as the generalization of the region seems to have been successful. 
 
