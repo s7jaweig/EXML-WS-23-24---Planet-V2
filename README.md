@@ -25,7 +25,7 @@ We used the given model from [Kaggle](https://www.kaggle.com/models/google/plane
 
 ## Workflow 
 
-First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a Sliding BlackBox that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the Superpixel approach, the Sliding BlackBox and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heat maps, which can identify image areas or image features that explain the decisions made by PlaNet.
+First a raw image is defined which needs to be processed in the workflow. The next step is the preparation of the raw image. Two different approaches were implemented to make the processes of machine learning explainable. The first approach pursues the strategy of dividing the raw image into superpixels and making them available for the further process. The second approach works with a Sliding BlackBox that is moved over the raw image and thus provides a series of individual images with masked areas. In the next step, the generated images with the Superpixel approach, the Sliding BlackBox and the raw images, are sent through the neural network. The output for each individual image is the probability for the top 5 predictions. In the final step, this information is further processed into heatmaps, which can identify image areas or image features that explain the decisions made by PlaNet.
 
 <p>
   <img src="./readme/workflow.png" width="350" /> 
@@ -36,7 +36,7 @@ First a raw image is defined which needs to be processed in the workflow. The ne
 
 ### Sliding BlackBox
 
-The Sliding BlackBox approach follows the strategy of covering a part of the raw image with a black box. To do this, a black box slides over the raw image step by step in columns and rows. The black box slides over the image in vertically and horizontally direction with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the PlaNet. For the raw image, the geocell with the highest probability is detected. The scores for all images in the data set predicted by the PlaNet in relation to the previously detected geocell are saved and provided for the creation of the heat map. Each area of the hea tmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
+The Sliding BlackBox approach follows the strategy of covering a part of the raw image with a black box. To do this, a black box slides over the raw image step by step in columns and rows. The black box slides over the image in vertically and horizontally direction with a 50% overlap in each case. This creates a data set of images with the black box always placed in a different position. Together with the raw image, the data set is then applied to the PlaNet. For the raw image, the geocell with the highest probability is detected. The scores for all images in the data set predicted by the PlaNet in relation to the previously detected geocell are saved and provided for the creation of the heatmap. Each area of the hea tmap is colored according to its score. For better visualization, the display is converted to relative values and a suitable colour gradient is used. Areas that are likely to have a greater influence on the neural network's decision are colored yellow. Less important image areas are colored purple.
 
 ### Superpixel
 
@@ -127,7 +127,7 @@ The lions in the wild were correctly located in Kruger National Park, South Afri
 
 ## Results
 
-The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heat maps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
+The analysis and evaluation of the results from Sliding BlackBox and Superpixels of the previously presented images are presented below. In order to facilitate the analysis, the generated heatmaps have been overlaid on the original image. This helps to identify regions of particular interest. You can always see on the left side the result of Sliding BlackBox and on the right side the result of Superpixels.
 
 <p>
   <img src="./readme/london_combined.png" width="350" />
@@ -149,7 +149,7 @@ This image demonstrates the significance of context, which, on its own, does not
   <em>Fig. 10: Heatmaps for Bonner Münster</em>
 </p>
 
-The heat map for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heat map is stronger for Superpixels than for Sliding BlackBox.
+The heatmap for Sliding BlackBox and Superpixel appears similar for Bonner Münster, with the building having the strongest influence, particularly the towers. The network classifies the tree in the foreground, which obscures part of the building, as irrelevant and focuses on the unique building. The heatmap is stronger for Superpixels than for Sliding BlackBox.
 
 <p>
   <img src="./readme/Matterhorn_combined.png" height="250" />
